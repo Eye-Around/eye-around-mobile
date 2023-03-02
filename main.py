@@ -1,6 +1,6 @@
 import cv2
 from gaze_tracking import GazeTracking
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
 
 
 list_x = []
@@ -44,6 +44,7 @@ while True:
     if (left_pupil_x is None) or (right_pupil_x is None) or (left_pupil_y is None) or (right_pupil_y is None):
         continue
     list_x.append(left_pupil_x)
+    list_y.append(left_pupil_y)
     a = list_x[0]
 
     print(list_x)
@@ -61,5 +62,7 @@ while True:
 # webcam = gr.inputs.Image(shape=(640,480), source="webcam")
 # webapp = gr.interface.Interface(inputs=webcam, outputs="images")
 # webapp.launch()
+plt.plot(list_x, list_y)
+plt.show()
 webcam.release()
 cv2.destroyAllWindows()
