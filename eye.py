@@ -6,7 +6,7 @@ from pupil import Pupil
 
 class Eye(object):
     """
-    This class creates a new frame to isolate the eye and
+    THIS Class : creates a new frame to isolate the eye and
     initiates the pupil detection.
     """
 

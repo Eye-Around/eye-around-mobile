@@ -5,7 +5,7 @@ from pupil import Pupil
 
 class Calibration(object):
     """
-    This class calibrates the pupil detection algorithm by finding the
+    THIS Class : calibrates the pupil detection algorithm by finding the
     best binarization threshold value for the person and the webcam.
     """
 
