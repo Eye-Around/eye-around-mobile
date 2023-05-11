@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/strong_eye_blink.dart';
+import 'package:new_project/comfort_eye_blink_three.dart';
 
-class DryEye extends StatefulWidget {
-  const DryEye({Key? key}) : super(key: key);
+class LongEye extends StatefulWidget {
+  const LongEye({Key? key}) : super(key: key);
 
   @override
-  State<DryEye> createState() => _DryEyeState();
+  State<LongEye> createState() => _LongEyeState();
 }
 
-class _DryEyeState extends State<DryEye> {
+class _LongEyeState extends State<LongEye> {
 
   List<String> numList = ['1', '2', '3', '4', '5'];
   String numValue = '1';
@@ -18,7 +18,7 @@ class _DryEyeState extends State<DryEye> {
     return Scaffold(
       backgroundColor: Color(0xff1b282a),
       appBar: AppBar(
-        title: Text('건조한 눈을 위한 운동'),
+        title: Text('원시안을 위한 눈 운동'),
         centerTitle: true,
       ),
       body: Container(
@@ -37,7 +37,7 @@ class _DryEyeState extends State<DryEye> {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
-              child: Text('건조한 눈을 위한 운동',
+              child: Text('원시안을 위한 눈 운동',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16.0,
@@ -47,7 +47,7 @@ class _DryEyeState extends State<DryEye> {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-              child: Text('#눈건조 #눈물형성',
+              child: Text('#원시 #망막건강',
                 style: TextStyle(
                   color: Colors.blueGrey,
                   fontSize: 12.0,
@@ -80,7 +80,7 @@ class _DryEyeState extends State<DryEye> {
                             ),
                           ),
                           Expanded(
-                            child: Text('눈물형성을 활성화 하여 안구 건조 감소에 효과가 있습니다.',
+                            child: Text('가까운 사물에 초점을 맞추어 눈을 움직여 원시안에 도움을 주고 눈 주변 근육의 긴장을 풀어줍니다.',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 12.0,
@@ -103,13 +103,13 @@ class _DryEyeState extends State<DryEye> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('01) 힘주어 눈 깜빡이기',
+                                Text('01) 편안히 눈 깜빡이기',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 12.0,
                                   ),
                                 ),
-                                Text('02) 편안히 눈 깜빡이기',
+                                Text('02) 화면을 가까이하고 눈 굴리기',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 12.0,
@@ -193,7 +193,7 @@ class _DryEyeState extends State<DryEye> {
               child: TextButton(
                 onPressed: (){
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => StrongEyeBlink()),
+                    MaterialPageRoute(builder: (context) => ComfortEyeBlinkThree()),
                   );
                 },
                 child: Text(
@@ -203,9 +203,9 @@ class _DryEyeState extends State<DryEye> {
                   ),
                 ),
                 style: TextButton.styleFrom(
-                    fixedSize: const Size(380, 40),
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.green,
+                  fixedSize: const Size(380, 40),
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.green,
                 ),
               ),
             ),
@@ -215,4 +215,3 @@ class _DryEyeState extends State<DryEye> {
     );
   }
 }
-

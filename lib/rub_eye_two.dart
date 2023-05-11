@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'rub_eye.dart';
+import 'home.dart';
+import 'dart:math' as math;
 
-class ComfortEyeBlink extends StatefulWidget {
-  const ComfortEyeBlink({Key? key}) : super(key: key);
+class RubEyeTwo extends StatefulWidget {
+  const RubEyeTwo({Key? key}) : super(key: key);
 
   @override
-  State<ComfortEyeBlink> createState() => _ComfortEyeBlinkState();
+  State<RubEyeTwo> createState() => _RubEyeTwoState();
 }
 
-class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
+class _RubEyeTwoState extends State<RubEyeTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff1b282a),
       appBar: AppBar(
-        title: Text('편안히 눈 깜빡이기'),
+        title: Text('눈 주위 문지르기'),
         centerTitle: true,
       ),
       body: Center(
@@ -25,7 +26,7 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text('편안히 눈 깜빡이기',
+                child: Text('눈 주위 문지르기',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
@@ -38,16 +39,40 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
                 height: 40.0,
               ),
 
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/blink.jpg'),
-                  radius: 100.0,
+              Container(
+                child: Stack(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/blink.jpg'),
+                      radius: 100.0,
+                    ),
+                    Positioned(
+                      top: 20.0,
+                      child: Icon(
+                        Icons.waving_hand,
+                        size: 100.0,
+                        color: Colors.green,
+                      ),
+                    ),
+                    Positioned(
+                      top: 20.0,
+                      right: 5.0,
+                      child: Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.rotationY(math.pi),
+                        child: Icon(
+                          Icons.waving_hand,
+                          size: 100.0,
+                          color: Colors.green,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
-                child: Text('10초간 눈을 감았다 뜨세요',
+                child: Text('양 손을 깨끗이 씻고 눈을 가볍게 덮으세요',
                   style: TextStyle(
                     color: Colors.green,
                     fontSize: 14.0,
@@ -57,7 +82,7 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 16.0),
-                child: Text('3회 반복',
+                child: Text('시계 방향과 반 시계 방향으로 천천히 돌리세요(각각 5회씩 반복)',
                   style: TextStyle(
                     color: Colors.green,
                     fontSize: 14.0,
@@ -85,11 +110,11 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
                 child: TextButton(
                   onPressed: (){
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => RubEye()),
+                      MaterialPageRoute(builder: (context) => Home()),
                     );
                   },
                   child: Text(
-                    '다음',
+                    '끝',
                     style: TextStyle(
                       fontSize: 16.0,
                     ),

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/far_move_eye.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'rub_eye.dart';
 
-class ComfortEyeBlink extends StatefulWidget {
-  const ComfortEyeBlink({Key? key}) : super(key: key);
+class ComfortEyeBlinkFour extends StatefulWidget {
+  const ComfortEyeBlinkFour({Key? key}) : super(key: key);
 
   @override
-  State<ComfortEyeBlink> createState() => _ComfortEyeBlinkState();
+  State<ComfortEyeBlinkFour> createState() => _ComfortEyeBlinkFourState();
 }
 
-class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
+class _ComfortEyeBlinkFourState extends State<ComfortEyeBlinkFour> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +85,7 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
                 child: TextButton(
                   onPressed: (){
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => RubEye()),
+                      MaterialPageRoute(builder: (context) => FarMoveEye()),
                     );
                   },
                   child: Text(

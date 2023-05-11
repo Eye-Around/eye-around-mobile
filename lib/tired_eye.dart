@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/strong_eye_blink.dart';
+import 'comfort_eye_blink_two.dart';
 
-class DryEye extends StatefulWidget {
-  const DryEye({Key? key}) : super(key: key);
+class TiredEye extends StatefulWidget {
+  const TiredEye({Key? key}) : super(key: key);
 
   @override
-  State<DryEye> createState() => _DryEyeState();
+  State<TiredEye> createState() => _TiredEyeState();
 }
 
-class _DryEyeState extends State<DryEye> {
+class _TiredEyeState extends State<TiredEye> {
 
   List<String> numList = ['1', '2', '3', '4', '5'];
   String numValue = '1';
@@ -18,7 +18,7 @@ class _DryEyeState extends State<DryEye> {
     return Scaffold(
       backgroundColor: Color(0xff1b282a),
       appBar: AppBar(
-        title: Text('건조한 눈을 위한 운동'),
+        title: Text('피곤한 눈을 위한 운동'),
         centerTitle: true,
       ),
       body: Container(
@@ -37,7 +37,7 @@ class _DryEyeState extends State<DryEye> {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
-              child: Text('건조한 눈을 위한 운동',
+              child: Text('피곤한 눈을 위한 운동',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16.0,
@@ -47,7 +47,7 @@ class _DryEyeState extends State<DryEye> {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-              child: Text('#눈건조 #눈물형성',
+              child: Text('#눈근육이완 #눈피로',
                 style: TextStyle(
                   color: Colors.blueGrey,
                   fontSize: 12.0,
@@ -80,7 +80,7 @@ class _DryEyeState extends State<DryEye> {
                             ),
                           ),
                           Expanded(
-                            child: Text('눈물형성을 활성화 하여 안구 건조 감소에 효과가 있습니다.',
+                            child: Text('경직된 눈 근육을 풀어주어 눈의 피로를 줄여줍니다.',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 12.0,
@@ -103,13 +103,13 @@ class _DryEyeState extends State<DryEye> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('01) 힘주어 눈 깜빡이기',
+                                Text('01) 편안히 눈 깜빡이기',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 12.0,
                                   ),
                                 ),
-                                Text('02) 편안히 눈 깜빡이기',
+                                Text('02) 상하좌우로 눈 굴리기',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 12.0,
@@ -185,7 +185,7 @@ class _DryEyeState extends State<DryEye> {
               ),
             ),
             SizedBox(
-              height: 20.0,
+              height: 40.0,
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -193,7 +193,7 @@ class _DryEyeState extends State<DryEye> {
               child: TextButton(
                 onPressed: (){
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => StrongEyeBlink()),
+                    MaterialPageRoute(builder: (context) => ComfortEyeBlinkTwo()),
                   );
                 },
                 child: Text(
@@ -203,16 +203,15 @@ class _DryEyeState extends State<DryEye> {
                   ),
                 ),
                 style: TextButton.styleFrom(
-                    fixedSize: const Size(380, 40),
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.green,
+                  fixedSize: const Size(380, 40),
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.green,
                 ),
               ),
             ),
           ],
         ),
       ),
-    );
+    );;
   }
 }
-

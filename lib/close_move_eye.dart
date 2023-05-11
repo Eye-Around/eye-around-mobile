@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/rub_eye_three.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'rub_eye.dart';
 
-class ComfortEyeBlink extends StatefulWidget {
-  const ComfortEyeBlink({Key? key}) : super(key: key);
+class CloseMoveEye extends StatefulWidget {
+  const CloseMoveEye({Key? key}) : super(key: key);
 
   @override
-  State<ComfortEyeBlink> createState() => _ComfortEyeBlinkState();
+  State<CloseMoveEye> createState() => _CloseMoveEyeState();
 }
 
-class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
+class _CloseMoveEyeState extends State<CloseMoveEye> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff1b282a),
       appBar: AppBar(
-        title: Text('편안히 눈 깜빡이기'),
+        title: Text('화면을 가까이하고 눈 굴리기'),
         centerTitle: true,
       ),
       body: Center(
@@ -25,7 +25,7 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text('편안히 눈 깜빡이기',
+                child: Text('화면을 가까이하고 눈 굴리기',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
@@ -33,41 +33,32 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
+                child: Text('화면을 1m 거리에 가까이 두고 아이콘을 따라 눈을 움직이세요',
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
 
               SizedBox(
-                height: 40.0,
+                height: 120.0,
               ),
 
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/blink.jpg'),
-                  radius: 100.0,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
-                child: Text('10초간 눈을 감았다 뜨세요',
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 16.0),
-                child: Text('3회 반복',
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: Icon(
+                    Icons.visibility,
+                    size: 60.0,
+                    color: Colors.green
                 ),
               ),
 
               SizedBox(
-                height: 40.0,
+                height: 120.0,
               ),
 
               Padding(
@@ -85,7 +76,7 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
                 child: TextButton(
                   onPressed: (){
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => RubEye()),
+                      MaterialPageRoute(builder: (context) => RubEyeThree()),
                     );
                   },
                   child: Text(

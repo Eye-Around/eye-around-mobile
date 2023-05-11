@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/move_eye_left.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'rub_eye.dart';
 
-class ComfortEyeBlink extends StatefulWidget {
-  const ComfortEyeBlink({Key? key}) : super(key: key);
+class MoveEyeDown extends StatefulWidget {
+  const MoveEyeDown({Key? key}) : super(key: key);
 
   @override
-  State<ComfortEyeBlink> createState() => _ComfortEyeBlinkState();
+  State<MoveEyeDown> createState() => _MoveEyeDownState();
 }
 
-class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
+class _MoveEyeDownState extends State<MoveEyeDown> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff1b282a),
       appBar: AppBar(
-        title: Text('편안히 눈 깜빡이기'),
+        title: Text('상하좌우 눈 굴리기'),
         centerTitle: true,
       ),
       body: Center(
@@ -25,7 +25,7 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text('편안히 눈 깜빡이기',
+                child: Text('상하좌우 눈 굴리기 - 하',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
@@ -40,24 +40,15 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
 
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/blink.jpg'),
-                  radius: 100.0,
+                child: Icon(
+                  Icons.south,
+                  size: 160.0,
+                  color: Colors.green,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
-                child: Text('10초간 눈을 감았다 뜨세요',
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 16.0),
-                child: Text('3회 반복',
+                child: Text('눈동자를 아래쪽으로 움직이세요',
                   style: TextStyle(
                     color: Colors.green,
                     fontSize: 14.0,
@@ -67,7 +58,7 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
               ),
 
               SizedBox(
-                height: 40.0,
+                height: 120.0,
               ),
 
               Padding(
@@ -85,7 +76,7 @@ class _ComfortEyeBlinkState extends State<ComfortEyeBlink> {
                 child: TextButton(
                   onPressed: (){
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => RubEye()),
+                      MaterialPageRoute(builder: (context) => MoveEyeLeft()),
                     );
                   },
                   child: Text(
