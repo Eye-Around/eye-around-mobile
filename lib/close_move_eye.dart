@@ -35,7 +35,7 @@ class _CloseMoveEyeState extends State<CloseMoveEye> {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
-                child: Text('화면을 1m 거리에 가까이 두고 아이콘을 따라 눈을 움직이세요',
+                child: Text('화면을 1m 거리 이내에 가까이 두고 아이콘을 따라 눈을 움직이세요',
                   style: TextStyle(
                     color: Colors.green,
                     fontSize: 14.0,

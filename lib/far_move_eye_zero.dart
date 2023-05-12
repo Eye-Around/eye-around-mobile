@@ -35,7 +35,7 @@ class _FarMoveEyeZeroState extends State<FarMoveEyeZero> {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
-                child: Text('화면을 5m 거리에 멀리 두고 아이콘을 따라 눈을 움직이세요',
+                child: Text('5m 거리 이상에 물체를 30초동안 집중해서 보고 화면에 아이콘을 따라 눈을 움직이세요',
                   style: TextStyle(
                     color: Colors.green,
                     fontSize: 14.0,
