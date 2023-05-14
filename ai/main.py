@@ -1,3 +1,5 @@
+from math import sqrt
+
 import cv2
 from gaze_tracking import GazeTracking
 import matplotlib.pyplot as plt
@@ -28,21 +30,41 @@ while True:
         text = "down"
     elif gaze.is_center():
         text = "center"
+    #elif gaze.is_right_up():
+    #    text = "right-up"
+    #elif gaze.is_right_down():
+    #    text = "right-down"
+    #elif gaze.is_left_up():
+    #    text = "left-up"
+    #elif gaze.is_left_down():
+    #    text = "left-down"
 
     left_pupil = gaze.pupil_left_coords()
     right_pupil = gaze.pupil_right_coords()
+    left_pupil_x = gaze.pupil_left_coords_x()
+    right_pupil_x = gaze.pupil_right_coords_x()
+    left_pupil_y = gaze.pupil_left_coords_y()
+    right_pupil_y = gaze.pupil_right_coords_y()
 
-    # cv2.putText(frame, "Left pupil:  " + str(left_pupil_x), (90, 130), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
-    # cv2.putText(frame, "Right pupil: " + str(right_pupil_x), (90, 165), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
+    if (right_pupil_x is None) or (left_pupil_x is None) or (right_pupil_y is None) or (left_pupil_y is None):
+        continue
+    between = sqrt(pow((right_pupil_x-left_pupil_x) ** 2+(left_pupil_y-right_pupil_y) ** 2, 2))
 
-    # TODO: break 조건 추가 (언제 멈출지)
-    if left_pupil[0] is None and left_pupil[1] is None and right_pupil[0] is None and right_pupil[1] is None:
-        break
+    cv2.putText(frame, text, (70, 50), cv2.FONT_HERSHEY_DUPLEX, 1.6, (147, 58, 31), 2)
+
+    cv2.putText(frame, "Left Pupil:  " + str(left_pupil), (90, 130), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
+    # cv2.putText(frame, "Right Pupil: " + str(right_pupil_x), (90, 165), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
+    print(between)
+
 
     cv2.imshow("Demo", frame)
 
     if cv2.waitKey(1) == 27:
         break
 
+    if cv2.waitKey(10) == 27:
+        break
+    # esc값 누를 시 종료
+    # TODO: 어플용 Command key로 바꾸기
 webcam.release()
 cv2.destroyAllWindows()
