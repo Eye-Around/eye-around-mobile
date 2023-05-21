@@ -163,15 +163,17 @@ class _LogInState extends State<LogIn> {
                         child: TextButton(
                           onPressed: (){
                             //id와 비밀번호 일치시
-                            if(controller_id.text == 'user@naver.com' && controller_pw.text == '1234'){
-                              Navigator.of(context).push(
-                                MaterialPageRoute(builder: (context) => Home()),
-                              );
+                            if(controller_id.text == 'user@naver.com' && controller_pw.text == '12345678'){
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Home(),
+                                  settings: RouteSettings(name: '/')));
+                              // Navigator.of(context).push(
+                              //   MaterialPageRoute(builder: (context) => Home()),
+                              // );
                             }
-                            else if(controller_id.text != 'user@naver.com' && controller_pw.text == '1234'){
+                            else if(controller_id.text != 'user@naver.com' && controller_pw.text == '12345678'){
                               showSnackBar2(context);
                             }
-                            else if(controller_id.text == 'user@naver.com' && controller_pw.text != '1234'){
+                            else if(controller_id.text == 'user@naver.com' && controller_pw.text != '12345678'){
                               showSnackBar3(context);
                             }
                             else{

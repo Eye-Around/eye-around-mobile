@@ -16,6 +16,8 @@ class _SignUpState extends State<SignUp> {
   TextEditingController controller_pw = TextEditingController();
   TextEditingController controller_pwConfirm = TextEditingController();
 
+  String inputName = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -189,6 +191,9 @@ class _SignUpState extends State<SignUp> {
                           child: Center(
                             child: TextButton(
                               onPressed: (){
+
+                                inputName = controller_name.text;
+
                                 if(controller_name.text != '' && controller_email.text != '' &&
                                     controller_pw.text != '' && controller_pwConfirm.text == controller_pw.text){
                                   Navigator.pop(context);

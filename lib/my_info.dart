@@ -12,6 +12,8 @@ class _MyInfoState extends State<MyInfo> {
   TextEditingController controller_name = TextEditingController();
   TextEditingController controller_email = TextEditingController();
 
+  String changedName = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

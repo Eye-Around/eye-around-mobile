@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'activities.dart';
+import 'home_page.dart';
 import 'login.dart';
 
 void main() {
@@ -21,6 +23,11 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
+      // initialRoute: '/',
+      // routes: {
+      //   '/b' : (context) => HomePage(),
+      //   '/c' : (context) => Activities(),
+      // },
       home: LogIn(),
     );
   }

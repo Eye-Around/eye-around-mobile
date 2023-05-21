@@ -132,39 +132,39 @@ class _DryEyeState extends State<DryEye> {
               ),
             ),
             SizedBox(
-              height: 40.0,
+              height: 100.0,
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('원하는 운동 횟수를 고르세요. ',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14.0,
-                    ),
-                  ),
-                  DropdownButton<String>(
-                    style: TextStyle(
-                      backgroundColor: Colors.white,
-                      color: Colors.black,
-                    ),
-                    value: numValue,
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        numValue = newValue!;
-                      });
-                    },
-                    items: numList.map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value, child: Text(value),
-                      );
-                    }).toList(),
-                  ),
-                ],
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: [
+            //       Text('원하는 운동 횟수를 고르세요. ',
+            //         style: TextStyle(
+            //           color: Colors.white,
+            //           fontSize: 14.0,
+            //         ),
+            //       ),
+            //       DropdownButton<String>(
+            //         style: TextStyle(
+            //           backgroundColor: Colors.white,
+            //           color: Colors.black,
+            //         ),
+            //         value: numValue,
+            //         onChanged: (String? newValue) {
+            //           setState(() {
+            //             numValue = newValue!;
+            //           });
+            //         },
+            //         items: numList.map<DropdownMenuItem<String>>((String value) {
+            //           return DropdownMenuItem<String>(
+            //             value: value, child: Text(value),
+            //           );
+            //         }).toList(),
+            //       ),
+            //     ],
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
               child: Row(
@@ -175,7 +175,7 @@ class _DryEyeState extends State<DryEye> {
                     size: 40.0,
                     color: Colors.blue,
                   ),
-                  Text('총 운동 시간 2:00',
+                  Text('총 운동 시간 1:05',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 14.0,

@@ -13,6 +13,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  int activityCount = 0;
+
+  int getActivityCount(){
+    return activityCount;
+  }
+
+  void incrementCounter(){
+    setState(() {
+      if (activityCount == 0){
+        activityCount++;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +51,8 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 16.0,
             ),
+
+
 
             Center(
               child: Padding(
@@ -63,13 +80,13 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(16.0),
                         child: LinearPercentIndicator(
-                          percent: 2 / 7,
+                          percent: activityCount / 7,
                           lineHeight: 20,
                           backgroundColor: Colors.green[800],
                           progressColor: Colors.green,
-                          width: 340,
+                          width: 320,
                         ),
                       ),
                       Padding(
@@ -77,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('2일',
+                            Text('$activityCount일',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 14.0,
@@ -122,6 +139,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: ElevatedButton.icon(
                     onPressed: (){
+                      incrementCounter();
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => DryEye()),
                       );
@@ -173,7 +191,9 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                   child: ElevatedButton.icon(
+
                     onPressed: (){
+                      incrementCounter();
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => TiredEye()),
                       );
@@ -226,6 +246,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: ElevatedButton.icon(
                     onPressed: (){
+                      incrementCounter();
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => LongEye()),
                       );
@@ -278,6 +299,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: ElevatedButton.icon(
                     onPressed: (){
+                      incrementCounter();
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => ShortEye()),
                       );

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'my_info.dart';
 import 'change_password.dart';
+import 'sign_up.dart';
+import 'home_page.dart';
+import 'login.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({Key? key}) : super(key: key);
@@ -11,6 +14,79 @@ class MyPage extends StatefulWidget {
 }
 
 class _MyPageState extends State<MyPage> {
+
+  String userName = '졸프';
+
+  int actCount = 0;
+
+  void incrementCounter(){
+    setState(() {
+      if (actCount == 0){
+        actCount++;
+      }
+    });
+  }
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+  }
+
+  void getName(){
+    SignUp signUp = SignUp();
+    //signUp.inputName;
+  }
+
+  void getCurrentActivityCount (){
+  }
+
+  void showLogoutPopup(){
+    showDialog(
+      context: context,
+      builder: (context){
+        return AlertDialog(
+          content: Text("로그아웃 하시겠습니까?",
+            // style: TextStyle(
+            //   color: Colors.black,
+            //   fontSize: 16.0,
+            //   fontWeight: FontWeight.bold,
+            // ),
+          ),
+          actions: [
+            TextButton(
+                onPressed: (){
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LogIn(),
+                      settings: RouteSettings(name: '/')));
+                },
+                child: Text("예",
+                  // style: TextStyle(
+                  // color: Colors.black,
+                  // fontSize: 16.0,
+                  // fontWeight: FontWeight.bold,
+                  // ),
+                ),
+            ),
+            TextButton(
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+              child: Text("아니오",
+                // style: TextStyle(
+                //   color: Colors.black,
+                //   fontSize: 16.0,
+                //   fontWeight: FontWeight.bold,
+                // ),
+              ),
+            ),
+          ],
+        );
+      }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +94,15 @@ class _MyPageState extends State<MyPage> {
       appBar: AppBar(
         title: Icon(Icons.people),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: (){
+              showLogoutPopup();
+            },
+            icon: Icon(
+                Icons.logout)
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -47,7 +132,7 @@ class _MyPageState extends State<MyPage> {
                       padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 8.0),
                       child: Container(
                         height: 40.0,
-                        child: Text('졸프 님',
+                        child: Text('$userName 님',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16.0,
@@ -85,13 +170,13 @@ class _MyPageState extends State<MyPage> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(16.0),
                           child: LinearPercentIndicator(
-                            percent: 2 / 7,
+                            percent: actCount / 7,
                             lineHeight: 20,
                             backgroundColor: Colors.green[800],
                             progressColor: Colors.green,
-                            width: 340,
+                            width: 320,
                           ),
                         ),
                         Padding(
@@ -99,7 +184,7 @@ class _MyPageState extends State<MyPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('2일',
+                              Text('$actCount일',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 14.0,
@@ -126,14 +211,14 @@ class _MyPageState extends State<MyPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text('졸프 님은(는)',
+                        Text('$userName 님은(는)',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text('일주일에 2번 눈 운동을 완료했습니다.',
+                        Text('일주일에 $actCount번 눈 운동을 완료했습니다.',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16.0,
@@ -149,6 +234,7 @@ class _MyPageState extends State<MyPage> {
                 padding: const EdgeInsets.all(16.0),
                 child: TextButton.icon(
                   onPressed: (){
+                    incrementCounter();
                     Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => MyInfo()),
                     );
@@ -177,6 +263,7 @@ class _MyPageState extends State<MyPage> {
                 padding: const EdgeInsets.all(16.0),
                 child: TextButton.icon(
                   onPressed: (){
+                    incrementCounter();
                     Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => ChangePassword()),
                     );
