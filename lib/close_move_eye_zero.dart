@@ -11,11 +11,8 @@ class CloseMoveEyeZero extends StatefulWidget {
   State<CloseMoveEyeZero> createState() => _CloseMoveEyeZeroState();
 }
 
-class _CloseMoveEyeZeroState extends State<CloseMoveEyeZero> with TickerProviderStateMixin {
-  late final AnimationController _controller = AnimationController(
-    duration: const Duration(seconds: 2),
-    vsync: this,
-  )..repeat(reverse: true);
+class _CloseMoveEyeZeroState extends State<CloseMoveEyeZero> {
+
 
   Timer? _timer;
   bool _isRunning = false;
@@ -24,7 +21,6 @@ class _CloseMoveEyeZeroState extends State<CloseMoveEyeZero> with TickerProvider
 
   @override
   void dispose() {
-    _controller.dispose();
     _timer?.cancel();
 
     super.dispose();

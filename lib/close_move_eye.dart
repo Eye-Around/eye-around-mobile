@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:new_project/rub_eye_three.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'dart:async';
+import 'close_move_eye_start.dart';
 
 class CloseMoveEye extends StatefulWidget {
   const CloseMoveEye({Key? key}) : super(key: key);
@@ -99,6 +100,10 @@ class _CloseMoveEyeState extends State<CloseMoveEye> {
                 child: TextButton(
                   onPressed: (){
                     _isRunning = !_isRunning;
+
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => CloseMoveEyeStart()),
+                    );
 
                     if(_isRunning){
 

@@ -175,7 +175,7 @@ class _ShortEyeState extends State<ShortEye> {
                     size: 40.0,
                     color: Colors.blue,
                   ),
-                  Text('총 운동 시간 1:50',
+                  Text('총 운동 시간 2:20',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 14.0,

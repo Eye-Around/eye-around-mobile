@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'home.dart';
 import 'dart:async';
+import 'far_move_eye_zero_start.dart';
 
 class FarMoveEyeZero extends StatefulWidget {
   const FarMoveEyeZero({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _FarMoveEyeZeroState extends State<FarMoveEyeZero> {
 
   Timer? _timer;
   bool _isRunning = false;
-  int _timerCount = 60;
+  int _timerCount = 90;
   String _buttonText = '시작';
 
   @override
@@ -100,10 +101,14 @@ class _FarMoveEyeZeroState extends State<FarMoveEyeZero> {
                   onPressed: (){
                     _isRunning = !_isRunning;
 
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => FarMoveEyeZeroStart()),
+                    );
+
                     if(_isRunning){
 
                       setState(() {
-                        // _timerCount = 60;
+                        // _timerCount = 90;
                         _buttonText = '정지';
                       });
 
