@@ -1,16 +1,16 @@
-# new_project
+# eye-around
 
-A new Flutter project.
+Eye stretching routine systems providing real-time feedback
 
-## Getting Started
+# Features
+## Home
+![image](https://github.com/user-attachments/assets/e6ed61f3-397d-4283-925e-b911ed06c706)
 
-This project is a starting point for a Flutter application.
+## Providing Feedback
+![image](https://github.com/user-attachments/assets/0fdc1b8e-0b62-4063-801c-28ff7c52f903)
 
-A few resources to get you started if this is your first Flutter project:
+## Accessing Distance
+![image](https://github.com/user-attachments/assets/520a718e-8c9c-42fd-94c8-f9911eedbd72)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## My-Page
+![image](https://github.com/user-attachments/assets/cdfee909-96ab-43fd-af70-14b1b7e28fc0)
